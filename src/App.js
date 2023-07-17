@@ -1,24 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import LoginForm from './components/auth/LoginForm';
+import RegisterForm from './components/auth/RegisterForm';
+import Landing from './components/info/Landing';
+import { Suspense } from 'react';
+import ChatPage from './components/chat/ChatPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Suspense>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/auth/login" element={<LoginForm />} />
+          <Route path="/auth/register" element={<RegisterForm />} />
+          <Route path="/main/chat" element={<ChatPage />} />
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   );
 }
 
