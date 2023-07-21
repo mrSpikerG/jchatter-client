@@ -44,7 +44,7 @@ class LoginForm extends Component {
              
                 localStorage.setItem("token", response.data.token);
                 localStorage.setItem("username", response.data.name);
-                window.location.replace("localhost:3000/auth/chat");
+                window.location ="http://localhost:3000/main/chat";
             }.bind(this))
 
             .catch(function (error) {

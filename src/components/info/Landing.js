@@ -7,8 +7,11 @@ class Landing extends Component {
         return (
             <div className='landing-container'>
                 <nav>
-                    <Link to="auth/login">t</Link>
+                    <Link to="auth/login">
+                        <div className='landing-button'>Start</div>
+                    </Link>
                 </nav>
+            
             </div>
         );
     }
